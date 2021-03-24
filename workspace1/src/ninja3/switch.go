@@ -22,7 +22,6 @@ func main() {
 		fallthrough
 	case true:
 		fmt.Println("This should not print5")
-		fallthrough
 	default:
 		fmt.Println("Default case")
 	}

@@ -11,9 +11,9 @@ func Sum(a *[3]float64) (sum float64) {
 
 func main() {
 	x := []int{1, 2, 3, 4, 5} //Slice
-	// x1 := [...]int{1, 2, 3, 4, 5} //Array
+	x1 := [...]int{1, 2, 3, 4, 5} //Array
 	// x2 := [3]int //Array
-	// fmt.Printf("%T", x)
+	fmt.Printf("%T", x1)
 	fmt.Println(x)
 	// x = append(x, 6, 7, 8, 9)
 	// fmt.Println(x)
