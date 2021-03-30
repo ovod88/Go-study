@@ -6,6 +6,9 @@ func foo(s string) {
 	fmt.Println("Hello", s) 
 }
 
+var x int = 7
+var g func() = func(){}
+
 func woo(s string) string {
 	return fmt.Sprint("Hello ", s) 
 }
