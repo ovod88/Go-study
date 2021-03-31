@@ -41,6 +41,10 @@ func all(smb anybody) {// the same as (smb interface{})
 	fmt.Println("You are also somebody")
 }
 
+func personOnly(p person) {
+	fmt.Println(p)
+}
+
 func main() {
 	s1 := secretAgent{// Here s1 is secretAgent and also human
 		person: person{
@@ -58,7 +62,8 @@ func main() {
 
 
 	// fmt.Println(p1)
-	bar(s1)
-	bar(p1)
-	all(s1)
+	// bar(s1)
+	// bar(p1)
+	// all(s1)
+	personOnly(s1)
 }

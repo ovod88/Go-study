@@ -12,6 +12,7 @@ type square struct {
 
 type circle struct {
 	r float32
+	desc string
 }
 
 type shape interface {
@@ -22,12 +23,13 @@ func (s square) area() float32 {
 	return s.a * s.b
 }
 
-func (c circle) area() float32 {
+func (c circle) area() float32 {//func (c *circle) area() float32 will work the same way
 	return c.r * c.r * math.Pi
 }
 
 func info(s shape) {
 	fmt.Println(s.area())
+	// shape.desc = "Hello" - This womtwork because you are trying to change the value, it is ot possible in Go
 }
 
 func main() {
@@ -39,4 +41,5 @@ func main() {
 
 	info(square1)
 	info(circle1)
+	info(&circle1)//Works the same
 }
