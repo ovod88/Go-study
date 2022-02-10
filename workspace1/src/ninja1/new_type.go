@@ -16,4 +16,8 @@ func main() {
 	y = int(x)
 	fmt.Println(y)
 	fmt.Printf("%T\n", y)
+	// z := 42
+	// fmt.Println(z)
+	// z = "example"
+	// fmt.Println(z)
 }

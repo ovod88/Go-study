@@ -119,7 +119,7 @@ func main() {
 		nails:      10,
 	}
 
-	var c Contractor	
+	var c Contractor
 	c.ProcessBoards(&tb, &tb.nails, boards)
 
 	// Display the new state of our toolbox and boards.

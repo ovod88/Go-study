@@ -3,17 +3,17 @@ package main
 import "fmt"
 
 type User struct {
-	Name string
+	Name  string
 	Email string
 }
 
 type Admin struct {
-    User
-    Level string
+	User
+	Level string
 }
 
 type Notifier interface {
-    notify()
+	notify()
 }
 
 func (u *User) notify() {
@@ -21,7 +21,7 @@ func (u *User) notify() {
 }
 
 func SendNotification(notify Notifier) {
-    notify.notify()
+	notify.notify()
 }
 
 func main() {
@@ -36,21 +36,21 @@ func main() {
 	// jill.Notify()
 
 	// user := User{
-    //     Name:  "janet jones",
-    //     Email: "janet@email.com",
-    // }
+	//     Name:  "janet jones",
+	//     Email: "janet@email.com",
+	// }
 
 	// SendNotification(&user)
 
 	admin := Admin{
-        User: User{
-            Name:  "john smith",
-            Email: "john@email.com",
-        },
-        Level: "super",
-    }
+		User: User{
+			Name:  "john smith",
+			Email: "john@email.com",
+		},
+		Level: "super",
+	}
 
-    // SendNotification(admin)
+	SendNotification(&admin)
 	admin.User.notify()
 	admin.notify()
 }

@@ -7,6 +7,6 @@ func main() {
 	x[9] = 42
 	x = append(x, 2345)
 	fmt.Println(x)
-	x = []int{1, 2, 3, 4, 5, 6}
-	fmt.Printf("%T",x)
+	y := []int{1, 2, 3, 4, 5, 6}
+	fmt.Printf("%T", y)
 }
