@@ -6,8 +6,6 @@
 // In-person training  : https://www.linkedin.com/in/inancgumus/
 // Follow me on twitter: https://twitter.com/inancgumus
 
-package main
-
 // ---------------------------------------------------------
 // EXERCISE: Math Tables
 //
@@ -103,6 +101,65 @@ package main
 //
 //     go run main.go "*" 4
 // ---------------------------------------------------------
+package main
+
+import (
+	"fmt"
+	"os"
+	"strconv"
+	"strings"
+)
 
 func main() {
+	args := os.Args
+	if len(args) != 3 {
+		fmt.Println("[op=*/+-%] [size]")
+		return
+	}
+	const operations = "* / + - %"
+	size, err := strconv.ParseFloat(args[2], 64)
+	operation := args[1]
+
+	if strings.IndexAny(operations, operation) == -1 {
+		fmt.Println("Invalid operation")
+		return
+	}
+	if err != nil {
+		fmt.Println("Wrong size")
+		return
+	}
+
+	fmt.Printf("%5s", "X")
+	for i := 0.0; i <= size; i++ {
+		fmt.Printf("%5v", i)
+	}
+
+	fmt.Println()
+	for i := 0.0; i <= size; i++ {
+		fmt.Printf("%5v", i)
+		for j := 0.0; j <= size; j++ {
+			switch operation {
+			case "*":
+				fmt.Printf("%5v", j*i)
+			case "/":
+				if j == 0 {
+					fmt.Printf("%5s", "NaN")
+					continue
+				}
+				fmt.Printf("%5v", i/j)
+			case "+":
+				fmt.Printf("%5v", i+j)
+			case "-":
+				fmt.Printf("%5v", i-j)
+			case "%":
+				if j == 0 {
+					fmt.Printf("%5s", "NaN")
+					continue
+				}
+				fmt.Printf("%5v", int(i)%int(j))
+			}
+		}
+		fmt.Println()
+	}
+
 }

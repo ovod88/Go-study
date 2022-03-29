@@ -37,9 +37,9 @@ func (d deck) print() {
 // 	return d[:handSize], d[handSize:]
 // }
 
-// func (d *deck) deal(handsize int) (deck, deck) {
-// 	return (*d)[:handsize], (*d)[handsize:]
-// }
+func (d *deck) deal(handsize int) (deck, deck) {
+	return (*d)[:handsize], (*d)[handsize:]
+}
 
 func (d deck) toString() string {
 	return strings.Join(d, ",")
@@ -70,6 +70,6 @@ func newDeckFromFile(filename string) deck {
 	return deck(strings.Split(string(bs), ","))
 }
 
-// func (xl xa) print() {
-// 	fmt.Println(xl)
-// }
+// // func (xl xa) print() {
+// // 	fmt.Println(xl)
+// // }

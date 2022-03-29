@@ -6,8 +6,8 @@ func main() {
 	// cards = append(cards, "Six of Spades")
 
 	// cards.print()
-	// cards := newDeck()
-	cards := newDeckFromFile("my_cards")
+	cards := newDeck()
+	// cards := newDeckFromFile("my_cards")
 	cards.shuffle()
 	cards.print()
 	// X := xa(2)
